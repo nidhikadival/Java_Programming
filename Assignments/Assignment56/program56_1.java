@@ -1,0 +1,57 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required packages
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+import java.io.*;
+
+class program56_1
+{
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String A[])
+    {
+        Scanner sobj = new Scanner(System.in);
+
+        int fd = 0;
+        String Fname = "\0";
+
+        System.out.println("Enter file name: ");
+        Fname = sobj.nextLine();
+
+        try 
+        {
+            FileReader frobj = new FileReader(Fname); 
+            System.out.println("File opened successfully.");
+            frobj.close();
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("Error opening file");
+        }
+        
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  Enter file name: 
+//  LB.txt
+//  Error opening file
+//
+//  Output:
+//  Enter file name: 
+//  PPA.txt
+//  File opened successfully.
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////

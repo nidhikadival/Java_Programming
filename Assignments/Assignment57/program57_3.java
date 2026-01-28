@@ -1,0 +1,51 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required packages
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.io.*;
+import java.util.*;
+
+class program57_3 
+{
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String[] A)
+    {
+        Scanner sc = new Scanner(System.in);
+        String dname = "\0";
+
+        System.out.print("Enter directory name: ");
+        dname = sc.nextLine();
+
+        File f = new File(dname);
+
+        if (f.mkdir()) 
+        {
+            System.out.println("Directory created successfully.");
+        }
+        else 
+        {
+            System.out.println("Directory already exists or cannot be created.");
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  Enter directory name: Assignment58
+//  Directory created successfully.
+//  nidhikadival@Nidhis-MacBook-Air Assignment57 % java program57_3
+//  Enter directory name: Assignment58
+//  Directory already exists or cannot be created.
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
