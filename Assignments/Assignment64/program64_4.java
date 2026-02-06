@@ -1,0 +1,68 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required packages
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.io.*;
+import java.util.*;
+
+class program64_4
+{
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String A[])
+    {
+       int iNo = 0;
+       int iMask = 0;
+       int iResult = 0;
+
+       Scanner sobj = new Scanner(System.in);
+
+       System.out.println("Enter number: "); 
+       iNo = sobj.nextInt();
+
+       iMask = 0x000001C0;
+
+       iResult = iNo & iMask;
+
+       if(iResult == iMask)
+       {
+            System.out.println("7th, 8th, 9th bit is ON.");
+       }
+       else
+       {
+            System.out.println("7th, 8th, 9th bit is OFF.");
+       }
+
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//
+//  Enter number: 
+//  448
+//  7th, 8th, 9th bit is ON.
+//
+//  Enter number: 
+//  1476
+//  7th, 8th, 9th bit is ON.
+//
+//  Enter number: 
+//  1156
+//  7th, 8th, 9th bit is OFF.
+//
+//  Enter number: 
+//  1044
+//  7th, 8th, 9th bit is OFF.
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////

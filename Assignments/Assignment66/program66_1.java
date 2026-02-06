@@ -1,0 +1,67 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required packages
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.io.*;
+import java.util.*;
+
+class program66_1
+{
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String A[])
+    {
+        int iNo = 0;
+        int iMask = 0x1;
+        int iPos = 0;
+        int iResult = 0;
+
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        iNo = sobj.nextInt();
+
+        System.out.println("Enter position: ");
+        iPos = sobj.nextInt();
+
+        iMask = iMask << (iPos - 1);
+
+        iResult = iNo & iMask;
+
+        if(iResult != 0)
+        {
+            System.out.println("TRUE");
+        }
+        else
+        {
+            System.out.println("FALSE");
+        }
+    }
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output:
+//  Enter number: 
+//  77
+//  Enter position: 
+//  3
+//  TRUE
+//
+//  Enter number: 
+//  73
+//  Enter position: 
+//  3
+//  FALSE
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,84 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Required packages
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.io.*;
+import java.util.*;
+
+class program67_3
+{
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name : CheckBit
+//  Description   : Checks whether 9th or 12th bit is ON
+//  Input         : int
+//  Output        : boolean
+//  Author        : Nidhi Girish Kadival
+//  Date          : 06/02/2026
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static boolean CheckBit(int iNo)
+    {
+        int iMask = 0x00000900;   // 9th and 12th bit
+        int iResult = 0;
+
+        iResult = iNo & iMask;
+
+        if(iResult != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Entry point function of the application
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String A[])
+    {
+        int iNo = 0;
+        boolean bResult = false;
+
+        Scanner sobj = new Scanner(System.in);
+
+        System.out.println("Enter number: ");
+        iNo = sobj.nextInt();
+
+        bResult = CheckBit(iNo);
+
+        if(bResult == true)
+        {
+            System.out.println("TRUE");
+        }
+        else
+        {
+            System.out.println("FALSE");
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Testcases successfully handled by the application
+//
+//  Output:
+//
+//  Enter number:
+//  257
+//  TRUE
+//
+//  Enter number:
+//  255
+//  FALSE
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
+ 
