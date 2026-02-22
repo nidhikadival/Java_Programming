@@ -1,0 +1,194 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Required packages
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+import java.util.*;
+
+class Matrix
+{
+    public int iRow;
+    public int iCol;
+    public int Arr[][];
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : Matrix Constructor
+//  Description :   Creates instance of the 2D array
+//  Input :         int int
+//  Author :        Nidhi Girish Kadival
+//  Date :          22/02/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public Matrix(int a, int b)
+    {
+        this.iRow = a;
+        this.iCol = b;
+        Arr = new int[iRow][iCol];
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : Accept
+//  Description :   Accepts the values of the elements of the array
+//  Input :         -
+//  Output :        void
+//  Author :        Nidhi Girish Kadival
+//  Date :          22/02/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void Accept()
+    {
+        Scanner sobj = new Scanner(System.in);
+        int i = 0, j = 0;
+
+        System.out.println("Enter the elements of Matrix : ");
+        
+        for(i=0; i<iRow ;i++)
+        {
+            System.out.println("Enter the elements of Row "+(i+1));
+            for(j=0; j<iCol; j++)
+            {
+                Arr[i][j] = sobj.nextInt();
+            }
+        }
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : Display
+//  Description :   Prints the entire array in rows and columns
+//  Input :         -
+//  Output :        void
+//  Author :        Nidhi Girish Kadival
+//  Date :          22/02/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public void Display()
+    {
+        int i = 0, j = 0;
+
+        System.out.println("Elements of Matrix are : ");
+        
+        for(i=0; i<iRow ;i++)
+        {
+            for(j=0; j<iCol; j++)
+            {
+                System.out.print(Arr[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Function Name : CheckIdentity
+//  Description :   Returns true if matrix is an identity matrix and false if not
+//  Input :         -
+//  Output :        boolean
+//  Author :        Nidhi Girish Kadival
+//  Date :          22/02/2026
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public boolean CheckIdentity()
+    {
+        int i = 0, j = 0;
+
+        if(iRow != iCol)
+        {
+            return false;
+        }
+
+        for(i=0; i<iRow ;i++)
+        {
+            for(j=0; j<iCol; j++)
+            {
+                if(i == j)
+                {
+                    if(Arr[i][j] != 1)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    if(Arr[i][j] != 0)
+                    {
+                        return false;
+                    }   
+                }
+            }
+        }
+
+        return true;
+    }
+
+}
+
+class program73_4
+{
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Entry point function for the application
+// 
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String A[])
+    {
+        int iRet = 0;
+        int iNo = 0;
+
+        boolean bRet = false;
+
+        Matrix mobj = new Matrix(4,4);
+
+        mobj.Accept();
+
+        bRet = mobj.CheckIdentity();
+
+        if(bRet == true)
+        {
+            System.out.println("It is an Identity Matrix");
+        }
+        else
+        {
+            System.out.println("It is not an Identity Matrix");
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+//  Testcases successfully handled by the application
+//
+//  Output :
+//  Enter the elements of Matrix : 
+//  Enter the elements of Row 1
+//  1   0   0   0
+//  Enter the elements of Row 2
+//  0   1   0   0
+//  Enter the elements of Row 3
+//  0   0   1   0
+//  Enter the elements of Row 4
+//  0   0   0   1
+//  It is an Identity Matrix
+//
+//  Output :
+//  Enter the elements of Matrix : 
+//  Enter the elements of Row 1
+//  1   1   1   1
+//  Enter the elements of Row 2
+//  0   1   0   0
+//  Enter the elements of Row 3
+//  0   0   0   0
+//  Enter the elements of Row 4
+//  0   0   0   1
+//  It is not an Identity Matrix
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////
